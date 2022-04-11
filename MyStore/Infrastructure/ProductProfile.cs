@@ -21,6 +21,10 @@ namespace MyStore.Infrastructure
             CreateMap<OrderModel, Order>();
             CreateMap<Order, OrderModel>();
 
+            CreateMap<Customer, CustomerModel>();
+            CreateMap<CustomerModel, Customer>();
+           
+
         }
     }
 

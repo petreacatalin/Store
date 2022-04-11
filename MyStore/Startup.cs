@@ -58,9 +58,11 @@ namespace MyStore
             services.AddScoped<IOrderRepository, OrderRepository>();
             services.AddScoped<IOrderService, OrderService>();
 
-
             services.AddScoped<IReportsRepository, ReportsRepository>();
             services.AddScoped<IReportsService, ReportsService>();
+
+            services.AddScoped<ICustomerRepository, CustomerRepository>();
+            services.AddScoped<ICustomerService, CustomerService>();
 
         }
 

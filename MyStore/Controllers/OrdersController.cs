@@ -104,9 +104,16 @@ namespace MyStore.Controllers
         }
 
         // DELETE api/<OrdersController>/5
+      
         [HttpDelete("{id}")]
-        public void Delete(int id)
+        public IActionResult Delete(int id)
         {
+            if (!orderService.Exists(id))
+            {
+                return NotFound();
+            }
+            var isDeleted = orderService.Delete(id);
+            return NoContent();
         }
     }
 }
