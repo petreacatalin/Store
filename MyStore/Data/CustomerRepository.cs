@@ -22,6 +22,7 @@ namespace MyStore.Data
         public Customer Add(Customer newCustomer)
         {
             var addedCustomer = context.Customers.Add(newCustomer);
+            context.SaveChanges();
             return addedCustomer.Entity;
         }
 

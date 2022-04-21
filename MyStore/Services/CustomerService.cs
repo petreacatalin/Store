@@ -16,7 +16,7 @@ namespace MyStore.Services
         bool Delete(int id);
         IEnumerable<CustomerModel> GetAllCustomers();
         Customer GetById(int id);
-        CustomerModel UpdateCostumer(CustomerModel model);
+        void UpdateCustomer(CustomerModel model);
 
     }
 
@@ -64,12 +64,11 @@ namespace MyStore.Services
             return customerRepository.GetById(id);
         }
 
-        public CustomerModel UpdateCostumer(CustomerModel model)
+        public void UpdateCustomer(CustomerModel model)
         {
             Customer customerToUpdate = mapper.Map<Customer>(model);
-            var updated = customerRepository.Update(customerToUpdate);
-
-            return mapper.Map<CustomerModel>(updated);
+            customerRepository.Update(customerToUpdate);
+            
         }
     }
 }

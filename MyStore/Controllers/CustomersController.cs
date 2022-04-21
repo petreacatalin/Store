@@ -64,8 +64,8 @@ namespace MyStore.Controllers
             {
                 return NotFound();
             }
-            var updated = customerService.UpdateCostumer(customerToUpdate);
-            return Ok(updated);
+            customerService.UpdateCustomer(customerToUpdate);
+            return NoContent();
         }
 
         [HttpDelete("{id}")]

@@ -10,6 +10,7 @@ using Microsoft.OpenApi.Models;
 using MyStore.Data;
 using MyStore.Domain.Entities;
 using MyStore.Infrastructure;
+using MyStore.Infrastructure.Profiles;
 using MyStore.Services;
 using System;
 using System.Collections.Generic;
@@ -49,8 +50,13 @@ namespace MyStore
             //load the appsettings in a strongly-typed class
             services.Configure<MySettings>(Configuration.GetSection("MySettings"));
 
+           
+
+
             services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
             services.AddAutoMapper(typeof(ProductProfile));
+            services.AddAutoMapper(typeof(CustomerProfile));
+            services.AddAutoMapper(typeof(SupplierProfile));
 
             services.AddScoped<IProductRepository, ProductRepository>();
             services.AddScoped<IProductService, ProductService>();
@@ -63,6 +69,9 @@ namespace MyStore
 
             services.AddScoped<ICustomerRepository, CustomerRepository>();
             services.AddScoped<ICustomerService, CustomerService>();
+
+            services.AddScoped<ISupplierRepository, SupplierRepository>();
+            services.AddScoped<ISupplierService, SupplierService>();
 
         }
 

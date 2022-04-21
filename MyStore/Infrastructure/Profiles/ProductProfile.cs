@@ -15,15 +15,11 @@ namespace MyStore.Infrastructure
             CreateMap<Product, ProductModel>();
             CreateMap<ProductModel, Product>();
 
-            //CreateMap<OrderDetailModel, OrderDetail>();
-            //CreateMap<OrderDetail, OrderDetailModel>();
+            CreateMap<OrderDetail, OrderDetailModel>();
+            CreateMap<OrderDetailModel, OrderDetail>();
 
             CreateMap<OrderModel, Order>();
             CreateMap<Order, OrderModel>();
-
-            CreateMap<Customer, CustomerModel>();
-            CreateMap<CustomerModel, Customer>();
-           
 
         }
     }

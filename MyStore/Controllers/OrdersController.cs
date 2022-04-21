@@ -70,7 +70,7 @@ namespace MyStore.Controllers
 
             }
 
-            var addedOrder = orderService.Add(newOrder);
+            var addedOrder = orderService.AddOrder(newOrder);
             return CreatedAtAction("Get", new { id = addedOrder.Orderid }, addedOrder);
 
         }

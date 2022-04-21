@@ -17,7 +17,7 @@ namespace MyStore.Services
         IEnumerable<OrderModel> GetAllOrders();
         bool Exists(int id);
         bool Delete(int id);
-        OrderModel Add(OrderModel newOrder);
+        OrderModel AddOrder(OrderModel newOrder);
 
         //IEnumerable<Order> GetAll(string? city, List<string>? country, Shippers shippers);
         
@@ -28,9 +28,9 @@ namespace MyStore.Services
         private readonly IOrderRepository orderRepository;
         private readonly IMapper mapper;
 
-        public OrderService(IOrderRepository repository, IMapper mapper)
+        public OrderService(IOrderRepository orderRepository, IMapper mapper)
         {
-            this.orderRepository = repository;
+            this.orderRepository = orderRepository;
             this.mapper = mapper;
         }
 
@@ -41,7 +41,7 @@ namespace MyStore.Services
         //    return allOrders;
         //}
 
-        public OrderModel Add(OrderModel newOrder)
+        public OrderModel AddOrder(OrderModel newOrder)
         {
             //repo...<Aadd
             Order orderToAdd = mapper.Map<Order>(newOrder);

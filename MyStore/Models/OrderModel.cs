@@ -23,6 +23,6 @@ namespace MyStore.Models
         public string Shippostalcode { get; set; }
         public string Shipcountry { get; set; }
 
-        //public ICollection<OrderDetailModel> OrderDetails { get; set; }
+        public ICollection<OrderDetailModel> OrderDetails { get; set; }
     }
 }
